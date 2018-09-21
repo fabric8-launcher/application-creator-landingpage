@@ -1,47 +1,74 @@
 body {
-    background-color:#dddddd;
+  background-color: #dddddd;
+  font-size: 14px !important;
 }
 
 .bg-redhat {
-    background-color: #a30000;
+  background-color: #a30000 !important;
 }
 
-.card {
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+.text-white {
+  color: #fff !important;
+}
+
+.healthcheck-textarea {
+  resize: none;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-0 {
+  margin-bottm: 0;
 }
 
 .media {
-    padding:10px;
+  padding: 10px;
 }
 
 .media-body {
-    padding:10px;
+  padding: 10px;
 }
 
 .header-table {
-    height:100%;
-    border-spacing: 20px;
-    border-collapse: separate;
+  height: 100%;
+  border-spacing: 20px;
+  border-collapse: separate;
 }
 
 .capability-header {
-    font-size: 20pt;
+  font-size: 20pt;
 }
 
 .language-icon {
-    font-size: 50pt;
+  font-size: 50pt;
 }
 
 .row-buffer {
-    margin-top:20px;
+  margin-top: 20px;
 }
 
-.btn-group-vertical > button {
-    margin-bottom:5px;
+.btn-group-vertical>button {
+  margin-bottom: 5px;
 }
 
 .full-width {
-    width:100%;
+  width: 100%;
 }
