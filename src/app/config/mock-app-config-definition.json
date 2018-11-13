@@ -7,6 +7,9 @@
       "props": {
         "databaseType": "postgresql"
       }
+    },
+    {
+      "module": "rest"
     }
   ]
 }
