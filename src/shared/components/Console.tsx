@@ -19,8 +19,11 @@ export class Console extends Component<{ id: string, content?: string }> {
     };
     const consoleContent = this.props.content || '';
     return (
-      <textarea ref={this.ref} id={this.props.id} name="console" onChange={onChange}
-                className="console" rows={5} disabled={true} value={consoleContent}/>
+      <div className="console">
+        Console
+        <textarea ref={this.ref} id={this.props.id} name="console" onChange={onChange}
+                  className="console" rows={5} disabled={true} value={consoleContent}/>
+      </div>
     );
   }
 }
