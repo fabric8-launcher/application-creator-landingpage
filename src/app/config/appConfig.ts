@@ -14,15 +14,12 @@ export const isMockMode = checkNotNull(process.env.REACT_APP_MODE, 'process.env.
 const appConfig: AppConfig = {
   applicationUrl: '/api'
 };
+declare var WELCOME_APP_CONFIG: AppDefinition | undefined;
+declare var OPENSHIFT_CONSOLE_URL: string | undefined;
 
 if (!isMockMode) {
-  const config = checkNotNull(process.env.REACT_APP_WELCOME_APP_CONFIG, 'process.env.REACT_APP_WELCOME_APP_CONFIG');
-  try {
-    appConfig.definition = JSON.parse(config);
-  } catch (e) {
-    throw new Error('Error while parsing WelcomeApp config: ' + e.toString());
-  }
-  const consoleUrl = process.env.REACT_APP_OPENSHIFT_CONSOLE || '';
+  appConfig.definition = checkNotNull(WELCOME_APP_CONFIG, 'WELCOME_APP_CONFIG');
+  const consoleUrl = OPENSHIFT_CONSOLE_URL || '';
   const repositoryUrl = process.env.REACT_APP_SOURCE_REPOSITORY_URL || '';
   appConfig.sourceRepositoryUrl = repositoryUrl.length > 0 ? repositoryUrl : undefined;
   appConfig.consoleUrl = consoleUrl.length > 0 ? consoleUrl : undefined;
