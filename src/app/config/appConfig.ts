@@ -1,6 +1,7 @@
 import {checkNotNull} from '../../shared/utils/Preconditions';
 import AppDefinition from './AppDefinition';
 import mockAppDefinition from './mockAppConfig';
+import { undefinedIfEmpty } from '../../shared/utils/Strings';
 
 export interface AppConfig {
   definition?: AppDefinition;
@@ -14,15 +15,19 @@ export const isMockMode = checkNotNull(process.env.REACT_APP_MODE, 'process.env.
 const appConfig: AppConfig = {
   applicationUrl: '/api'
 };
-declare var WELCOME_APP_CONFIG: AppDefinition | undefined;
-declare var OPENSHIFT_CONSOLE_URL: string | undefined;
+
+declare var INJECTED_APP_CONFIG: { consoleUrl: string; encodedDefinition: string; repositoryUrl: string; } | undefined;
 
 if (!isMockMode) {
-  appConfig.definition = checkNotNull(WELCOME_APP_CONFIG, 'WELCOME_APP_CONFIG');
-  const consoleUrl = OPENSHIFT_CONSOLE_URL || '';
-  const repositoryUrl = process.env.REACT_APP_SOURCE_REPOSITORY_URL || '';
-  appConfig.sourceRepositoryUrl = repositoryUrl.length > 0 ? repositoryUrl : undefined;
-  appConfig.consoleUrl = consoleUrl.length > 0 ? consoleUrl : undefined;
+  checkNotNull(INJECTED_APP_CONFIG, 'INJECTED_APP_CONFIG');
+  try {
+    appConfig.definition = JSON.parse(INJECTED_APP_CONFIG!.encodedDefinition);
+  } catch(e) {
+    throw new Error('Error while parsing WelcomeApp config: ' + e.toString());
+  }
+  
+  appConfig.sourceRepositoryUrl = undefinedIfEmpty(INJECTED_APP_CONFIG!.consoleUrl);
+  appConfig.consoleUrl = undefinedIfEmpty(INJECTED_APP_CONFIG!.repositoryUrl);
 } else {
   appConfig.definition = mockAppDefinition;
   appConfig.consoleUrl = 'http://consoleUrl.mock.io';
