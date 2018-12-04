@@ -15,7 +15,7 @@
     "build-js": "react-scripts-ts build",
     "build": "npm-run-all build-clean build-css build-js",
     "build-clean": "rimraf ./build",
-    "test": "react-scripts-ts test --env=jsdom",
+    "test": "yarn build-css && react-scripts-ts test --env=jsdom",
     "test:ci": "CI=true yarn test",
     "eject": "react-scripts-ts eject",
     "doc": "npx styleguidist server",
