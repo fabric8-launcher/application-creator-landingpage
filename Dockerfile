@@ -5,7 +5,8 @@ ENV LANG=en_US.utf8
 COPY . ./
 RUN yarn install && yarn build
 
-FROM registry.centos.org/kbsingh/openshift-nginx:latest
+# This image is used to deploy
+FROM registry.centos.org/kbsingh/openshift-nginx:latest as deployer
 MAINTAINER Vasek Pavlin <vasek@redhat.com>
 
 ENV LANG=en_US.utf8
