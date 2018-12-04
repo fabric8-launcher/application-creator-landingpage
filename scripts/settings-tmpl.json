@@ -1,4 +1,0 @@
-<script>
-window.OPENSHIFT_CONSOLE_URL = '${OPENSHIFT_CONSOLE_URL}';
-window.WELCOME_APP_CONFIG = ${WELCOME_APP_CONFIG}
-</script>

@@ -17,7 +17,7 @@ RUN yum install -y gettext
 ADD nginx.conf /tmp/nginx.conf
 
 COPY scripts/entrypoint.sh /usr/bin/entrypoint.sh
-COPY scripts/settings-tmpl.json /usr/bin/settings-tmpl.json
+COPY scripts/config-tmpl.json /usr/bin/config-tmpl.json
 RUN chmod +x /usr/bin/entrypoint.sh
 
 RUN rm -f /usr/share/nginx/html/*
