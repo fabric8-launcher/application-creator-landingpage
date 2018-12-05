@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CloudDeploymentInfo /> check that render is correct 1`] = `
+<InfoCard
+  name="cloud-deployment"
+>
+  <Component>
+    <CloudIcon
+      className="with-text"
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+     Cloud Deployment
+  </Component>
+  <Component>
+    <Grid
+      className=""
+      gutter={null}
+      lg={null}
+      md={null}
+      sm={null}
+      span={null}
+      xl={null}
+    >
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <img />
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <p>
+          This system is deployed on the OpenShift Cloud Platform, a Kubernetes distribution which builds and runs the applications and services we've created.
+        </p>
+      </GridItem>
+      <Component />
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        Application URL
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <ExternalLink
+          href="http://www.application-url.com"
+        >
+          http://www.application-url.com
+        </ExternalLink>
+        <br />
+        The link to this application running live on OpenShift
+      </GridItem>
+    </Grid>
+  </Component>
+</InfoCard>
+`;
+
+exports[`<CloudDeploymentInfo /> check that render is correct with repositoryUrl 1`] = `
+<InfoCard
+  name="cloud-deployment"
+>
+  <Component>
+    <CloudIcon
+      className="with-text"
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+     Cloud Deployment
+  </Component>
+  <Component>
+    <Grid
+      className=""
+      gutter={null}
+      lg={null}
+      md={null}
+      sm={null}
+      span={null}
+      xl={null}
+    >
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <img />
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <p>
+          This system is deployed on the OpenShift Cloud Platform, a Kubernetes distribution which builds and runs the applications and services we've created.
+        </p>
+      </GridItem>
+      <Component />
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        Application URL
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <ExternalLink
+          href="http://www.application-url.com"
+        >
+          http://www.application-url.com
+        </ExternalLink>
+        <br />
+        The link to this application running live on OpenShift
+      </GridItem>
+      <Component />
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        OpenShift Console URL
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <ExternalLink
+          href="http://www.console-url.com"
+        >
+          http://www.console-url.com
+        </ExternalLink>
+        <br />
+        Link to manage the OpenShift instance where this application is deployed.
+      </GridItem>
+    </Grid>
+  </Component>
+</InfoCard>
+`;

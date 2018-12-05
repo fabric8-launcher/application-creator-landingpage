@@ -26,7 +26,7 @@ import appConfig from './config/appConfig';
 import capabilitiesCardsMapping from './capabilities/capabilitiesCardsMapping';
 import capabilitiesConfig from './config/capabilitiesConfig';
 import {CloudDeploymentInfo} from './infos/CloudDeploymentInfo';
-import {CodeBaseInfo} from './infos/CodebaseInfo';
+import {CodeBaseInfo} from './infos/CodeBaseInfo';
 import {getLocationAbsoluteUrl} from '../shared/utils/Locations';
 
 

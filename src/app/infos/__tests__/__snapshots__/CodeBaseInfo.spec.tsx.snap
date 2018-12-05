@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CodeBaseInfo /> check that render is correct 1`] = `
+<InfoCard
+  name="codebase"
+>
+  <Component>
+    <CodeIcon
+      className="with-text"
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+     
+    Vert.x
+     - 
+    java
+     - Codebase
+  </Component>
+  <Component>
+    <Grid
+      className=""
+      gutter={null}
+      lg={null}
+      md={null}
+      sm={null}
+      span={null}
+      xl={null}
+    >
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <img
+          src="icon"
+        />
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <h1>
+          Vert.x
+           - 
+          java
+        </h1>
+        <p>
+          Your codebase has been customized to hook into the services selected during generation. All capabilities are functional end-to-end for you to explore.
+        </p>
+      </GridItem>
+      <Component />
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        Base Image
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        group/imagename
+      </GridItem>
+    </Grid>
+  </Component>
+</InfoCard>
+`;
+
+exports[`<CodeBaseInfo /> check that render is correct with repositoryUrl 1`] = `
+<InfoCard
+  name="codebase"
+>
+  <Component>
+    <CodeIcon
+      className="with-text"
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+     
+    Vert.x
+     - 
+    java
+     - Codebase
+  </Component>
+  <Component>
+    <Grid
+      className=""
+      gutter={null}
+      lg={null}
+      md={null}
+      sm={null}
+      span={null}
+      xl={null}
+    >
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <img
+          src="icon"
+        />
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <h1>
+          Vert.x
+           - 
+          java
+        </h1>
+        <p>
+          Your codebase has been customized to hook into the services selected during generation. All capabilities are functional end-to-end for you to explore.
+        </p>
+      </GridItem>
+      <Component />
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        Git URL
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        <ExternalLink
+          href="http://repoUrl"
+        >
+          http://repoUrl
+        </ExternalLink>
+        <br />
+        You may use the git command-line client (or other preferred tooling) to clone this repository locally.
+        <ShellCommand
+          command="git clone http://repoUrl"
+        />
+      </GridItem>
+      <Component />
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={3}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        Base Image
+      </GridItem>
+      <GridItem
+        className=""
+        lg={null}
+        lgOffset={null}
+        lgRowSpan={null}
+        md={null}
+        mdOffset={null}
+        mdRowSpan={null}
+        offset={null}
+        rowSpan={null}
+        sm={null}
+        smOffset={null}
+        smRowSpan={null}
+        span={9}
+        xl={null}
+        xlOffset={null}
+        xlRowSpan={null}
+      >
+        group/imagename
+      </GridItem>
+    </Grid>
+  </Component>
+</InfoCard>
+`;

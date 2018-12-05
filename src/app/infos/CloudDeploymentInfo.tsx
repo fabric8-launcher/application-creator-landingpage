@@ -1,24 +1,24 @@
-import {Grid, GridItem} from '@patternfly/react-core';
+import { Grid, GridItem } from '@patternfly/react-core';
 import * as React from 'react';
-import {ExternalLink} from '../../shared/components/ExternalLink';
+import { ExternalLink } from '../../shared/components/ExternalLink';
 
 import openshiftImage from '../../assets/img/openshift.png';
 import InfoCard from '../components/InfoCard';
-import {CloudIcon} from '@patternfly/react-icons';
+import { CloudIcon } from '@patternfly/react-icons';
 
 interface CloudDeploymentInfoProps {
   applicationUrl: string;
-  openshiftConsoleUrl: string;
+  openshiftConsoleUrl?: string;
 }
 
 export function CloudDeploymentInfo(props: CloudDeploymentInfoProps) {
   return (
     <InfoCard name="cloud-deployment">
-      <InfoCard.Title><CloudIcon className="with-text"/> Cloud Deployment</InfoCard.Title>
+      <InfoCard.Title><CloudIcon className="with-text" /> Cloud Deployment</InfoCard.Title>
       <InfoCard.Body>
         <Grid>
           <GridItem span={3}>
-            <img src={openshiftImage}/>
+            <img src={openshiftImage} />
           </GridItem>
           <GridItem span={9}>
             <p>This system is deployed on the OpenShift Cloud Platform,
@@ -28,16 +28,20 @@ export function CloudDeploymentInfo(props: CloudDeploymentInfoProps) {
           <GridItem span={3}>Application URL</GridItem>
           <GridItem span={9}>
             <ExternalLink href={props.applicationUrl}>{props.applicationUrl}</ExternalLink>
-            <br/>
+            <br />
             The link to this application running live on OpenShift
           </GridItem>
-          <InfoCard.Separator />
-          <GridItem span={3}>OpenShift Console URL</GridItem>
-          <GridItem span={9}>
-            <ExternalLink href={props.openshiftConsoleUrl}>{props.openshiftConsoleUrl}</ExternalLink>
-            <br/>
-            Link to manage the OpenShift instance where this application is deployed.
-          </GridItem>
+          {props.openshiftConsoleUrl && (
+            <React.Fragment>
+              <InfoCard.Separator />
+              <GridItem span={3}>OpenShift Console URL</GridItem>
+              <GridItem span={9}>
+                <ExternalLink href={props.openshiftConsoleUrl}>{props.openshiftConsoleUrl}</ExternalLink>
+                <br />
+                Link to manage the OpenShift instance where this application is deployed.
+              </GridItem>
+            </React.Fragment>
+          )}
         </Grid>
 
       </InfoCard.Body>
