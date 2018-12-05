@@ -6,8 +6,9 @@ import { undefinedIfEmpty } from '../../shared/utils/Strings';
 export interface AppConfig {
   definition?: AppDefinition;
   applicationUrl: string;
-  consoleUrl?: string;
+  openshiftConsoleUrl?: string;
   sourceRepositoryUrl?: string;
+  sourceRepositoryProvider?: string;
 }
 
 export const isMockMode = checkNotNull(process.env.REACT_APP_MODE, 'process.env.REACT_APP_MODE') === 'mock';
@@ -16,7 +17,14 @@ const appConfig: AppConfig = {
   applicationUrl: '/api'
 };
 
-declare var INJECTED_APP_CONFIG: { consoleUrl: string; encodedDefinition: string; repositoryUrl: string; } | undefined;
+interface InjectedAppConfig {
+  openshiftConsoleUrl: string;
+  encodedDefinition: string;
+  sourceRepositoryUrl: string; 
+  sourceRepositoryProvider: string;
+}
+
+declare var INJECTED_APP_CONFIG: InjectedAppConfig | undefined;
 
 if (!isMockMode) {
   checkNotNull(INJECTED_APP_CONFIG, 'INJECTED_APP_CONFIG');
@@ -26,11 +34,12 @@ if (!isMockMode) {
     throw new Error('Error while parsing WelcomeApp config: ' + e.toString());
   }
   
-  appConfig.sourceRepositoryUrl = undefinedIfEmpty(INJECTED_APP_CONFIG!.consoleUrl);
-  appConfig.consoleUrl = undefinedIfEmpty(INJECTED_APP_CONFIG!.repositoryUrl);
+  appConfig.sourceRepositoryUrl = undefinedIfEmpty(INJECTED_APP_CONFIG!.openshiftConsoleUrl);
+  appConfig.openshiftConsoleUrl = undefinedIfEmpty(INJECTED_APP_CONFIG!.sourceRepositoryUrl);
+  appConfig.sourceRepositoryProvider = undefinedIfEmpty(INJECTED_APP_CONFIG!.sourceRepositoryProvider);
 } else {
   appConfig.definition = mockAppDefinition;
-  appConfig.consoleUrl = 'http://consoleUrl.mock.io';
+  appConfig.openshiftConsoleUrl = 'http://consoleUrl.mock.io';
   appConfig.sourceRepositoryUrl = 'http://sourceRepositoryUrl.mock.io';
 }
 

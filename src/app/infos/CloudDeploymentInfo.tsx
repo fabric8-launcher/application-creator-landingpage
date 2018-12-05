@@ -8,7 +8,7 @@ import {CloudIcon} from '@patternfly/react-icons';
 
 interface CloudDeploymentInfoProps {
   applicationUrl: string;
-  consoleUrl: string;
+  openshiftConsoleUrl: string;
 }
 
 export function CloudDeploymentInfo(props: CloudDeploymentInfoProps) {
@@ -34,7 +34,7 @@ export function CloudDeploymentInfo(props: CloudDeploymentInfoProps) {
           <InfoCard.Separator />
           <GridItem span={3}>OpenShift Console URL</GridItem>
           <GridItem span={9}>
-            <ExternalLink href={props.consoleUrl}>{props.consoleUrl}</ExternalLink>
+            <ExternalLink href={props.openshiftConsoleUrl}>{props.openshiftConsoleUrl}</ExternalLink>
             <br/>
             Link to manage the OpenShift instance where this application is deployed.
           </GridItem>

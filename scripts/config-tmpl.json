@@ -1,5 +1,6 @@
 window.INJECTED_CONFIG = {
-  "consoleUrl" : '${OPENSHIFT_CONSOLE_URL}',
+  "openshiftConsoleUrl" : '${OPENSHIFT_CONSOLE_URL}',
   "encodedDefinition" : '${WELCOME_APP_CONFIG}',
-  "repositoryUrl" : '${SOURCE_REPOSITORY_URL}'
+  "sourceRepositoryUrl" : '${SOURCE_REPOSITORY_URL}',
+  "sourceRepositoryProvider" : '${SOURCE_REPOSITORY_PROVIDER}'
 }

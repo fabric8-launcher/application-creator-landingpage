@@ -95,7 +95,7 @@ export default class App extends React.Component<{}, { isNavOpen: boolean }> {
             </TextContent>
           </PageSection>
           <PageSection>
-            <CloudDeploymentInfo applicationUrl={getLocationAbsoluteUrl('')} consoleUrl={appConfig.consoleUrl!}/>
+            <CloudDeploymentInfo applicationUrl={getLocationAbsoluteUrl('')} openshiftConsoleUrl={appConfig.openshiftConsoleUrl!}/>
             <CodeBaseInfo runtime={appConfig.definition!.extra.runtimeInfo} baseImage={appConfig.definition!.extra.runtimeImage}
                           repositoryUrl={appConfig.sourceRepositoryUrl}/>
             {appConfig.definition!.capabilities.filter(this.showCapability).map(c => {
