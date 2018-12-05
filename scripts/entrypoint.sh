@@ -8,7 +8,7 @@ export WELCOME_APP_CONFIG_ENCODED=$(echo ${WELCOME_APP_CONFIG} | sed 's/\"/\\\"/
 # Encode quotes and remove line breaks
 ENCODED_CONFIG=$(envsubst < ${CONFIG_TEMPLATE} | sed -e 's/[]\/$*.^[]/\\&/g' | sed ':a;N;$!ba;s/\n/ /g')
 # create injected index.html with json settings
-sed -i -e "s/<script id=\"script-injection\">.*<\/script>/<script id=\"injected-script\">$(echo ${ENCODED_CONFIG})<\/script>/g" ${INDEX}
+sed -i -e "s/<script id=\"script-injection\"><\/script>/<script id=\"injected-script\">$(echo ${ENCODED_CONFIG})<\/script>/g" ${INDEX}
 echo -------------------------------------
 cat ${INDEX}
 
