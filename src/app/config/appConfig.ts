@@ -7,8 +7,10 @@ export interface AppConfig {
   definition?: AppDefinition;
   applicationUrl: string;
   openshiftConsoleUrl?: string;
-  sourceRepositoryUrl?: string;
-  sourceRepositoryProvider?: string;
+  sourceRepository?: {
+    url: string;
+    provider: string;
+  };
 }
 
 export const isMockMode = checkNotNull(process.env.REACT_APP_MODE, 'process.env.REACT_APP_MODE') === 'mock';
@@ -34,13 +36,21 @@ if (!isMockMode) {
     throw new Error('Error while parsing WelcomeApp config: ' + e.toString());
   }
   
-  appConfig.sourceRepositoryUrl = undefinedIfEmpty(INJECTED_CONFIG!.openshiftConsoleUrl);
   appConfig.openshiftConsoleUrl = undefinedIfEmpty(INJECTED_CONFIG!.sourceRepositoryUrl);
-  appConfig.sourceRepositoryProvider = undefinedIfEmpty(INJECTED_CONFIG!.sourceRepositoryProvider);
+  const sourceRepositoryUrl = undefinedIfEmpty(INJECTED_CONFIG!.sourceRepositoryUrl);
+  if(sourceRepositoryUrl) {
+    appConfig.sourceRepository = {
+      url: sourceRepositoryUrl,
+      provider: undefinedIfEmpty(INJECTED_CONFIG!.sourceRepositoryProvider)!,
+    };
+  }
 } else {
   appConfig.definition = mockAppDefinition;
   appConfig.openshiftConsoleUrl = 'http://consoleUrl.mock.io';
-  appConfig.sourceRepositoryUrl = 'http://sourceRepositoryUrl.mock.io';
+  appConfig.sourceRepository = {
+    url: 'https://github.com/fabric8-launcher/launcher-creator-welcome-app.git',
+    provider: 'GitHub',
+  };
 }
 
 checkNotNull(appConfig.definition, 'appConfig.definition');

@@ -238,14 +238,14 @@ exports[`<CodeBaseInfo /> check that render is correct with repositoryUrl 1`] = 
         xlRowSpan={null}
       >
         <ExternalLink
-          href="http://repoUrl"
+          href="https://github.com/fabric8-launcher/launcher-creator-welcome-app.git"
         >
-          http://repoUrl
+          https://github.com/fabric8-launcher/launcher-creator-welcome-app.git
         </ExternalLink>
         <br />
         You may use the git command-line client (or other preferred tooling) to clone this repository locally.
         <ShellCommand
-          command="git clone http://repoUrl"
+          command="git clone https://github.com/fabric8-launcher/launcher-creator-welcome-app.git"
         />
       </GridItem>
       <Component />

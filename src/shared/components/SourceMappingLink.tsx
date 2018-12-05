@@ -4,12 +4,15 @@ import {AngleDoubleRightIcon} from '@patternfly/react-icons';
 
 
 export function SourceMappingLink(props: {
-  sourceRepositoryUrl?: string;
+  sourceRepository?: {
+    url: string;
+    provider: string;
+  };
   name: string;
   fileRepositoryLocation: string;
 }) {
-  if (props.sourceRepositoryUrl) {
-    const link = `${props.sourceRepositoryUrl}/blob/master/${props.fileRepositoryLocation}`;
+  if (props.sourceRepository && props.sourceRepository.provider === 'GitHub') {
+    const link = `${props.sourceRepository.url.replace('.git', '')}/blob/master/${props.fileRepositoryLocation}`;
     return (<div><AngleDoubleRightIcon className="with-text" /> {props.name} (<ExternalLink href={link}>view source</ExternalLink>)</div>)
   }
   return (<div title={props.fileRepositoryLocation}><AngleDoubleRightIcon className="with-text" /> {props.name}</div>);

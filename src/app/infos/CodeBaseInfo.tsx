@@ -15,7 +15,10 @@ interface CodeBaseInfoProps {
     }
   };
   baseImage: string;
-  repositoryUrl?: string;
+  sourceRepository?: {
+    url: string;
+    provider: string;
+  };
 }
 
 export function CodeBaseInfo(props: CodeBaseInfoProps) {
@@ -34,14 +37,14 @@ export function CodeBaseInfo(props: CodeBaseInfoProps) {
           </GridItem>
           <InfoCard.Separator/>
 
-          {props.repositoryUrl && (
+          {props.sourceRepository && (
             <React.Fragment>
               <GridItem span={3}>Git URL</GridItem>
               <GridItem span={9}>
-                <ExternalLink href={props.repositoryUrl}>{props.repositoryUrl}</ExternalLink>
+                <ExternalLink href={props.sourceRepository.url}>{props.sourceRepository.url}</ExternalLink>
                 <br/>
                 You may use the git command-line client (or other preferred tooling) to clone this repository locally.
-                <ShellCommand command={`git clone ${props.repositoryUrl}`}/>
+                <ShellCommand command={`git clone ${props.sourceRepository.url}`}/>
               </GridItem>
               <InfoCard.Separator/>
             </React.Fragment>

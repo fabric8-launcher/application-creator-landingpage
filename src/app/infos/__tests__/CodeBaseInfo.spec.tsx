@@ -13,6 +13,11 @@ const runtime = {
   },
 };
 
+const sourceRepository = {
+  url: 'https://github.com/fabric8-launcher/launcher-creator-welcome-app.git',
+  provider: 'GitHub',
+};
+
 describe('<CodeBaseInfo />', () => {
   it('check that render is correct', () => {
     const component = shallow(<CodeBaseInfo baseImage="group/imagename" runtime={runtime} />);
@@ -20,7 +25,7 @@ describe('<CodeBaseInfo />', () => {
   });
 
   it('check that render is correct with repositoryUrl', () => {
-    const component = shallow(<CodeBaseInfo baseImage="group/imagename" runtime={runtime} repositoryUrl="http://repoUrl" />);
+    const component = shallow(<CodeBaseInfo baseImage="group/imagename" runtime={runtime} sourceRepository={sourceRepository} />);
     expect(component).toMatchSnapshot();
   });
 

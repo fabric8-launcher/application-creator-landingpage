@@ -13,12 +13,15 @@ import RequestConsole, {RequestResult} from '../../../shared/components/RequestC
 interface DatabaseCapabilityProps {
   databaseType: string;
   apiService: DatabaseCapabilityApi;
-  sourceRepositoryUrl?: string;
+  sourceRepository?: {
+    url: string;
+    provider: string;
+  };
   extra: {
     sourceMapping: {
       dbEndpoint: string;
-    }
-  },
+    };
+  };
 }
 
 interface DatabaseCapabilityState {
@@ -61,7 +64,7 @@ export default class DatabaseCapability extends React.Component<DatabaseCapabili
             </GridItem>
             <CapabilityCard.Separator/>
             <GridItem span={12} className="http-request-service">
-              <SourceMappingLink sourceRepositoryUrl={this.props.sourceRepositoryUrl}
+              <SourceMappingLink sourceRepository={this.props.sourceRepository}
                                  name="dbEndpoint"
                                  fileRepositoryLocation={this.props.extra.sourceMapping.dbEndpoint}/>
             </GridItem>
