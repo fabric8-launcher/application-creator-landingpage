@@ -7,7 +7,7 @@ INDEX="/usr/share/nginx/html/index.html"
 export JSON_CONFIG="$(envsubst < ${CONFIG_TEMPLATE} | tr -d '[:space:]' | sed 's/\"/\\\"/g')"
 
 # create injected index.html with json settings
-sed -i -e 's/<script id="script-injection"><\/script>/<script id="injected-script">'${JSON_CONFIG}'<\/script>/g' ${INDEX}
+sed -i -e "s/<script id=\"script-injection\"><\/script>/<script id=\"injected-script\">$(echo $JSON_CONFIG | sed -e 's/[]\/$*.^[]/\\&/g')<\/script>/g" ${INDEX}
 echo -------------------------------------
 cat ${INDEX}
 
