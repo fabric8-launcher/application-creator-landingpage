@@ -17,26 +17,26 @@ const appConfig: AppConfig = {
   applicationUrl: '/api'
 };
 
-interface InjectedAppConfig {
+interface InjectedConfig {
   openshiftConsoleUrl: string;
   encodedDefinition: string;
   sourceRepositoryUrl: string; 
   sourceRepositoryProvider: string;
 }
 
-declare var INJECTED_APP_CONFIG: InjectedAppConfig | undefined;
+declare var INJECTED_CONFIG: InjectedConfig | undefined;
 
 if (!isMockMode) {
-  checkNotNull(INJECTED_APP_CONFIG, 'INJECTED_APP_CONFIG');
+  checkNotNull(INJECTED_CONFIG, 'INJECTED_CONFIG');
   try {
-    appConfig.definition = JSON.parse(INJECTED_APP_CONFIG!.encodedDefinition);
+    appConfig.definition = JSON.parse(INJECTED_CONFIG!.encodedDefinition);
   } catch(e) {
     throw new Error('Error while parsing WelcomeApp config: ' + e.toString());
   }
   
-  appConfig.sourceRepositoryUrl = undefinedIfEmpty(INJECTED_APP_CONFIG!.openshiftConsoleUrl);
-  appConfig.openshiftConsoleUrl = undefinedIfEmpty(INJECTED_APP_CONFIG!.sourceRepositoryUrl);
-  appConfig.sourceRepositoryProvider = undefinedIfEmpty(INJECTED_APP_CONFIG!.sourceRepositoryProvider);
+  appConfig.sourceRepositoryUrl = undefinedIfEmpty(INJECTED_CONFIG!.openshiftConsoleUrl);
+  appConfig.openshiftConsoleUrl = undefinedIfEmpty(INJECTED_CONFIG!.sourceRepositoryUrl);
+  appConfig.sourceRepositoryProvider = undefinedIfEmpty(INJECTED_CONFIG!.sourceRepositoryProvider);
 } else {
   appConfig.definition = mockAppDefinition;
   appConfig.openshiftConsoleUrl = 'http://consoleUrl.mock.io';
