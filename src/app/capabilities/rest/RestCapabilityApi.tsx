@@ -7,7 +7,7 @@ export interface RestCapabilityApi {
 }
 
 function buildGreetingPath(path: string, name: string) {
-  return name.length === 0 ? path : `/${path}?name=${encodeURIComponent(name)}`;
+  return name.length === 0 ? path : `${path}?name=${encodeURIComponent(name)}`;
 }
 
 export const REST_GREETING_PATH = '/api/greeting';
