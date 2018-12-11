@@ -22,7 +22,9 @@ import { FrontendTierInfo } from './infos/FrontendTierInfo';
 
 
 const appDefinition = checkNotNull(appConfig.definition, 'appConfig.definition');
-const backendTier = appDefinition.tiers.find(t => t.tier === 'backend') as BackendTier;
+const backendTier = (appDefinition.tiers.length === 1 ?
+    appDefinition.tiers[0] :
+    appDefinition.tiers.find(t => t.tier === 'backend')) as BackendTier;
 const frontendTier = appDefinition.tiers.find(t => t.tier === 'frontend') as FrontendTier;
 const capabilities = [...(backendTier ? backendTier.capabilities : [])];
 const capabilityDefinitionByModule = _.keyBy(capabilities, 'module');
