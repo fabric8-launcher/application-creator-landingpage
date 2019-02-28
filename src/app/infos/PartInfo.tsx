@@ -38,7 +38,7 @@ export function PartInfo(props: PartInfoProps) {
   const language = capitalizeFirstLetter(props.runtimeInfo.enumInfo.metadata.language);
   const category = capitalizeFirstLetter(props.category);
   return (
-    <InfoCard name={ props.subfolderName + '-tier'}>
+    <InfoCard name={ props.category + '-tier'}>
       <InfoCard.Title>{categoryDefinition[props.category].icon}
         {category} - {props.runtimeInfo.enumInfo.name} - {language}
       </InfoCard.Title>
